@@ -31,10 +31,11 @@ The background music of the game uses the piano piece *"Butterfly Lovers' Concer
 ├── assets/
 │   ├── audio/                 # Game background music files
 │   │   └── liangzhu.mp3
+│   │   └── game-over.mp3
 │   ├── css/                   # Stylesheets
 │   │   └── style.css
 │   ├── img/                   # Icons and images
-│   │   └── letter-n.png
+│   │   └── keyboard.png
 │   └── video/                 # Background video files
 │       └── northern-light.mp4
 ├── index.html                # The main HTML file
