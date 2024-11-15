@@ -139,7 +139,7 @@ const hideScoreboard = () => {
 
 // Function to display all results
 const updateResultsDisplay = () => {
-  resultDisplay.innerHTML = ''; // Clear previous results
+  resultDisplay.innerHTML = ''; 
   scoreArray.forEach((score, index) => {
       const scoreElement = document.createElement('p');
       scoreElement.textContent = `${index + 1}. ${score.scoreSummary}`;
