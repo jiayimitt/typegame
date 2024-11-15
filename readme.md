@@ -47,7 +47,7 @@ The background music of the game uses the piano piece *"Butterfly Lovers' Concer
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/piano-typist-game.git
+   git clone https://github.com/jiayimitt/typegame
    ```
 
 2. Open the `index.html` file in your browser to run the game.
