@@ -29,7 +29,7 @@ The background music of the game uses the piano piece *"Butterfly Lovers' Concer
 /piano-typist-game
 │
 ├── assets/
-│   ├── audio/                 # Game background music files
+│   ├── audio/                 # Game background and game-over music files
 │   │   └── liangzhu.mp3
 │   │   └── game-over.mp3
 │   ├── css/                   # Stylesheets
