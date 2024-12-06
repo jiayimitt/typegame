@@ -1,0 +1,235 @@
+@charset "utf-8";
+
+.container {
+    width: min(100% - 30px, 1200px);
+    margin-inline: auto;
+    display: flex;
+    justify-content: center; 
+    align-items: center;   
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;   
+}
+
+/* Basic page container */
+body {
+    font-family: "Nunito", sans-serif;
+    background-color: var(--app-black-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;   
+    margin: 0;
+}
+
+:root {
+    --app-black-background: #1e1e1e;
+    --app-green-color: #0ae448;
+    --app-white-color: #ebe6e6;     
+}
+
+.fa-clock {
+    margin-top: 20px;   
+    font-size: 28px; 
+    color: var(--app-green-color);
+}
+
+.timer {
+    margin-top: 10px;
+    font-size: 36px;
+}
+
+.score {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.game-container {
+    text-align: center;
+    width: min(100% - 30px, 400px); 
+    height: 400px;
+    max-width: 400px;
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #4f656d;
+    
+    color: var(--app-white-color);
+    position: relative; 
+    z-index: 1;
+}
+
+.word-display {
+    background-color:#024a3d;
+    padding: 20px 30px;
+    margin: 20px;
+    border-radius: 8px;
+    color: var(--app-white-color);
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+    z-index: 1; 
+    backdrop-filter: blur(5px); 
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.word-display.fade {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.word-input {
+    background-color: #ebe6e6;
+    padding: 16px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    text-align: center;
+    color: var(--app-black-background);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.word-input:focus {
+    outline: none; 
+    box-shadow: none;
+    border: none; 
+}
+
+button {
+    width: 25%;
+    height: 15%;
+    margin: 5px 0;
+    background-color: var(--app-green-color);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.start-btn, .restart-btn {
+    background-color: var(--app-green-color);
+    color: #353536;
+    border:var(--app-white-color);
+    border-radius: 5px;
+    padding: 5px 10px;    
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.start-btn:active, .restart-btn:active {
+    transform: scale(0.95); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.video-background {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+h1 {
+    font-size: 3em;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+.result-display-gameover {
+    color: #d53508;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.new-score {
+    padding: 5px;
+    background-color:#024a3d;
+    font-weight: bold;
+    transition: color 0.5s ease, background-color 0.5s ease;
+}
+
+.result-area {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 380px;
+    max-height: 90vh;
+    padding: 20px;
+    background: transparent;
+    border: 1px solid #556e52;
+    overflow-y: auto;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    
+}
+
+.result-area h3 {
+    font-size: 1.2em;
+    color: var(--app-white-color);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.result-area p {
+    font-size: 0.9em;
+    color: var(--app-white-color);
+    margin: 5px 0; 
+    padding-bottom: 5px;
+}
+
+@keyframes blink {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+.blink {
+    animation: blink 1s infinite;
+    color: red; 
+}
+
+.word-display.correct span {
+    animation: burn 0.8s forwards ease-out;
+  }
+  
+  @keyframes burn {
+    0% {
+      color: var(--app-white-color);
+      opacity: 1;
+      transform: scale(1);
+      text-shadow: none;
+    }
+    30% {
+      color: #ff6f00; 
+      text-shadow: 0 0 5px #ff6f00, 0 0 10px #ff6f00;
+      transform: scale(1.3);
+    }
+    100% {
+      color: #ff6f00;
+      opacity: 0;
+      transform: scale(0.5) translateY(-40px);
+      text-shadow: none;
+    }
+  }
+
+.clear-scores-btn {
+    padding: 10px;   
+    border: none;
+    border-radius: 5px;
+    color: var(--app-black-background);
+}
+  
+  

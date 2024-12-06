@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="jiayi">
+        <title>Piano Typist</title>
+        <link rel="stylesheet" href="./assets/css/style.css" media="all">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="icon" href="./assets/img/keyboard.png" type="x-icon">
+        <script src="assets/js/index.js" type="module" defer></script>      
+    </head>
+    <body>
+      <div class="video-background">
+        <video autoplay muted loop>
+          <source src="./assets/vedio/northern-light.mp4" type="video/mp4">         
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="game-container">
+        <h2>Piano Typist</h2>
+        <i class="fas fa-clock"></i> 
+        <p class="timer">15</p>
+        <p class="score">Score: 0</p>
+        <div class="word-display">Press Start to begin!</div>
+        <input type="text" class="word-input" placeholder="Type the word here..." disabled>
+        <button class="start-btn">Start</button>
+        <button class="restart-btn" style="display: none;">Restart</button>
+        <div class="result-display-gameover" style="display: none;"></div>  
+        <audio class="gameover-sound" src="./assets/audio/game-over.mp3" preload="auto"></audio>     
+    </div>    
+    <audio class="background-music" src="./assets/audio/liangzhu.mp3" loop></audio> 
+    </body>
+
+    <div class="result-area" style="display: none;">
+      <h3>Scoreboard</h3>
+      <div class="result-display"></div>
+      <button class="clear-scores-btn">Clear</button>
+    </div>
+</html>
