@@ -19,7 +19,6 @@ const hideScoresBtn = select('.hide-scores-btn');
 let shuffledWords, currentWord, hits, timeLeft, interval;
 let scoreArray = []; 
 
-// Save scores to localStorage with sorting and limiting to top 9
 function saveScoresToLocalStorage() {
 
     scoreArray.sort((a, b) => b.hits - a.hits);
@@ -45,11 +44,16 @@ function loadScoresFromLocalStorage() {
     const storedScores = localStorage.getItem('scoreArray');
     if (storedScores) {
         const parsed = JSON.parse(storedScores);
-        scoreArray = parsed.map(obj => ({
-            date: new Date(obj.date),
-            hits: obj.hits,
-            percentage: obj.percentage
-        }));
+
+        scoreArray = [];
+        parsed.forEach(obj => {
+            const score = {
+                date: new Date(obj.date),
+                hits: obj.hits,
+                percentage: obj.percentage
+            };
+            scoreArray.push(score);
+        });
 
         scoreArray.sort((a, b) => b.hits - a.hits);
         if (scoreArray.length > 9) {
@@ -156,8 +160,6 @@ function updateResultsDisplay(highlightTimestamp = null) {
     resultDisplay.style.display = 'block';
 }
  
-
-// Start game function
 function startGame() {
     initializeGame();
     startBtn.style.display = 'none';
@@ -167,7 +169,6 @@ function startGame() {
     backgroundMusic.play(); 
 };
 
-// End game function
 function endGame() {
     clearInterval(interval);
     wordInput.disabled = true;
@@ -179,7 +180,6 @@ function endGame() {
 
     const accuracy = wordBank.length > 0 ? ((hits / wordBank.length) * 100).toFixed(2) : 0;
 
-    // Use regular objects to store score
     const newScore = {
         date: new Date(),
         hits: hits,
@@ -204,7 +204,6 @@ function endGame() {
     wordDisplay.textContent = "Press Restart to begin!";
 }
 
-// Restart game function
 function restartGame() {
     initializeGame();
     clearInterval(interval);
