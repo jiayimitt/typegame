@@ -1,7 +1,7 @@
 'use strict';
 
 // Word bank
-const wordBank = [
+export const wordBank = [
     'dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'building',
     'population', 'weather', 'bottle', 'history', 'dream', 'character', 'money',
     'absolute', 'discipline', 'machine', 'accurate', 'connection', 'rainbow',
@@ -35,7 +35,7 @@ const wordBank = [
     'film', 'jupiter'
    ];
   
-  // Shuffle words function
+ 
   export function shuffleWords() {
     return [...wordBank].sort(() => Math.random() - 0.5);
   }

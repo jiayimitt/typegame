@@ -181,6 +181,7 @@ p {
 }
 
 .result-area p {
+    text-align: center;
     font-size: 0.9em;
     color: var(--app-white-color);
     margin: 5px 0; 
@@ -225,11 +226,29 @@ p {
     }
   }
 
+.scores-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    color: var(--app-black-background);
+}
+
 .clear-scores-btn {
+    width: 30%;
+    margin-left: 0;
+    margin-right: 20%;
     padding: 10px;   
     border: none;
     border-radius: 5px;
-    color: var(--app-black-background);
+    background-color: #ff6f00;
+}
+
+.hide-scores-btn {
+    width: 30%;
+    padding: 10px;   
+    border: none;
+    border-radius: 5px;
+    background-color: #ebe6e6;
 }
   
   
